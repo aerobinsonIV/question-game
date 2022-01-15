@@ -3,15 +3,13 @@ import database as data
 
 
 def signup(request_json):
-    
+
     response = {"status": 0}
     username = request_json['username']
     password = request_json['password']
     email = request_json['email']
 
-    print("useranem is " + username)
-    print("password is " + password)
-    print("email is " + email)
+    print(f"Added user {username}")
 
     db = data.opendb("main")
     results = db.select("users", "*", "username=\"" + username + "\"")
@@ -27,5 +25,7 @@ def signup(request_json):
         return flask.jsonify(response)
 
     db.insert("users", [username, password, email], ["username", "password", "email"])
+
+    db.close()
 
     return flask.jsonify(response)
