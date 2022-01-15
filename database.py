@@ -70,6 +70,7 @@ class Database:
 
         query = "INSERT INTO " + tablename + " " + varstr + " VALUES " + valsstr
         self.cursorObject.execute(query)
+        self.db.commit()
 
     def rawCommand(self, command):
         self.cursorObject.execute(command)
@@ -95,3 +96,4 @@ class Database:
         print(query)
 
         self.cursorObject.execute(query)
+        self.db.commit()
