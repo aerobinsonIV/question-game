@@ -30,7 +30,7 @@ def login_page():
 
 @app.route("/matchmaking")
 def matchmaking_page():
-    return flask.render_template("matchmaking.html")
+    return "Login cookie " + flask.request.cookies.get("login_cookie")
 
 @app.route("/chat")
 def chat_page():
