@@ -25,7 +25,7 @@ async function signup(username, email, password){
 		headers: {
 			"Content-Type":"application/json"
 		},
-		body:`{"username":"${username},"email":"${email},"password":"${password}"}`
+		body:`{"username":"${username}","email":"${email}","password":"${password}"}`
 	};
 
 	let url = 'api/signup';
