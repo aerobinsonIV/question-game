@@ -74,6 +74,7 @@ class Database:
 
     def rawCommand(self, command):
         self.cursorObject.execute(command)
+        self.db.commit()
         return self.cursorObject.fetchall()
 
     def update(self, tablename, setting, condition):
@@ -98,7 +99,13 @@ class Database:
             settingstr = settingstr[:-2]
 
         query = "UPDATE " + tablename + " SET " + settingstr + " WHERE " + condition
-        print(query)
 
         self.cursorObject.execute(query)
+        self.db.commit()
+
+    def delete(self, tablename, condition):
+        if not self.open:
+            raise Exception("Database is not open!")
+
+        self.cursorObject.execute("DELETE FROM " + tablename + " WHERE " + condition)
         self.db.commit()
