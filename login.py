@@ -24,4 +24,4 @@ def login(request_json):
         response["cookie"] = user[1]  # TODO make a better cookie system omegalol
 
     db.close()
-    return response
+    return flask.jsonify(response)
