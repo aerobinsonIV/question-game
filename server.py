@@ -3,6 +3,7 @@ import flask
 # API path scripts:
 from mom import mom
 from signup import signup
+from login import login
 
 app = flask.Flask(__name__)
 
@@ -53,6 +54,10 @@ def api_mom():
 @app.route("/api/signup", methods=['POST'])
 def api_signup():
     return signup(flask.request.get_json())
+
+@app.route("/api/login", methods=['POST'])
+def api_signup():
+    return login(flask.request.get_json())
 
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
