@@ -9,7 +9,6 @@ body{
 }
 
 .pretty-button{
-    background-color: green;
     background: linear-gradient(45deg, rgb(0, 200, 0) 0%, rgb(200, 0, 200) 100%);
     width: 10rem;
     height: 3.6rem;
@@ -18,4 +17,10 @@ body{
     align-items: center;
     color: white;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.pretty-button:hover{
+    box-shadow: 10px;
+    background: linear-gradient(45deg, rgb(30, 230, 30) 0%, rgb(230, 30, 230) 100%);
 }
