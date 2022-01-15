@@ -85,14 +85,16 @@ class Database:
         if type(setting) is str:
             settingstr = setting
         elif type(setting) is tuple:
-            if type(setting[1]) is str:
-                setting[1] = "(" + setting[1] + ")"
-            settingstr = setting[0] + "=" + setting[1]
+            temp = setting[1]
+            if type(temp) is str:
+                temp = "\"" + temp + "\""
+            settingstr = setting[0] + "=" + temp
         else:
             for val in setting:
-                if type(val[1]) is str:
-                    val[1] = "(" + val[1] + ")"
-                settingstr += val[0] + "=" + val[1] + ", "
+                temp = val[1]
+                if type(temp) is str:
+                    temp = "(" + temp + ")"
+                settingstr += val[0] + "=" + temp + ", "
             settingstr = settingstr[:-2]
 
         query = "UPDATE " + tablename + " SET " + settingstr + " WHERE " + condition
