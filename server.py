@@ -5,6 +5,9 @@ from mom import mom
 
 app = flask.Flask(__name__)
 
+# For all API paths, JSON parsing should happen in this script
+# All API functions should take in one parameter which is a dictionary
+
 # API paths:
 @app.route("/")
 def index():
