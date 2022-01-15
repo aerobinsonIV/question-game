@@ -1,3 +1,5 @@
+//All API functions should return a promise that gives a JSON object
+
 async function mom(text){
     var opts = {
         method: 'POST',
@@ -11,6 +13,6 @@ async function mom(text){
     let url = 'api/mom';
 
     return fetch(url, opts).then((response) => {
-        return response.text();
+        return response.json();
     });
 }

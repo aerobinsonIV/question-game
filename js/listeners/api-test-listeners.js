@@ -5,6 +5,6 @@ coolButton.addEventListener('click', (event) => {
 
     mom(text).then((response) => {
         console.log(response);
-        outputText.innerHTML = response;
+        outputText.innerHTML = response.text;
     });
 })
