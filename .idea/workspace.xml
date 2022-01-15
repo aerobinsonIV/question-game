@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="added delete">
-      <change afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="logging into your mom gottem">
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642274712083</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="logging into your mom gottem">
+      <created>1642287727767</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642287727767</updated>
+    </task>
+    <task id="LOCAL-00010" summary="logging into your mom gottem">
+      <created>1642287877926</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642287877926</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +132,7 @@
     <MESSAGE value="fix insert for ream" />
     <MESSAGE value="debugging update" />
     <MESSAGE value="added delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delete" />
+    <MESSAGE value="logging into your mom gottem" />
+    <option name="LAST_COMMIT_MESSAGE" value="logging into your mom gottem" />
   </component>
 </project>

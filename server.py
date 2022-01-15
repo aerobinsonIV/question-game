@@ -56,7 +56,7 @@ def api_signup():
     return signup(flask.request.get_json())
 
 @app.route("/api/login", methods=['POST'])
-def api_signup():
+def api_login():
     return login(flask.request.get_json())
 
 # This part hosts the whole JS folder or something
