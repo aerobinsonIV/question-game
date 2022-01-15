@@ -69,9 +69,6 @@ class Database:
                 varstr = "(" + varstr[:-2] + ")"
 
         query = "INSERT INTO " + tablename + " " + varstr + " VALUES " + valsstr
-
-        print("sql query: " + query)
-
         self.cursorObject.execute(query)
 
     def rawCommand(self, command):
@@ -94,4 +91,7 @@ class Database:
                 settingstr += ", "
             settingstr = settingstr[:-2]
 
-        self.cursorObject.execute("UPDATE " + tablename + " SET " + settingstr + " WHERE " + condition)
+        query = "UPDATE " + tablename + " SET " + settingstr + " WHERE " + condition
+        print(query)
+
+        self.cursorObject.execute(query)

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="added insert rawCommand and update">
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="fix insert for ream">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642267471979</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix insert">
+      <created>1642268226855</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642268226855</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix insert for ream">
+      <created>1642268580711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642268580711</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -58,6 +72,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added insert rawCommand and update" />
-    <option name="LAST_COMMIT_MESSAGE" value="added insert rawCommand and update" />
+    <MESSAGE value="fix insert" />
+    <MESSAGE value="fix insert for ream" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix insert for ream" />
   </component>
 </project>
