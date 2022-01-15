@@ -1,7 +1,4 @@
-async function asyncFunction(){
-
-    text = document.getElementById("coolTextBox").value
-
+async function mom(text){
     var opts = {
         method: 'POST',
         headers: {
@@ -13,14 +10,18 @@ async function asyncFunction(){
 
     let url = 'api/mom';
 
-    fetch(url, opts).then((response) => {
-        // return response.json();
+    return fetch(url, opts).then((response) => {
         return response.text();
-    }).then((body) => {
-        outputText = document.getElementById("text");
-        console.log(body);
-        outputText.innerHTML = body;
-        // console.log(body)
-        // callback(body);
+    });
+}
+
+async function asyncFunction(){
+
+    text = document.getElementById("coolTextBox").value
+    outputText = document.getElementById("text");
+
+    mom(text).then((response) => {
+        console.log(response);
+        outputText.innerHTML = response;
     });
 }
