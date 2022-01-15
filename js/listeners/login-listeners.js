@@ -9,7 +9,7 @@ loginButton.addEventListener('click', (event) => {
 
     // Call API function  
     login(email, password).then((response) => {
-        console.log(response);
-        outputText.innerHTML = response.text;
+        document.cookie = "login_cookie=" + response.cookie + "; path=/";
+        alert("Welcome, " + response.username + "!");
     });
 })
