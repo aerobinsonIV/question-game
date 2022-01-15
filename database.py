@@ -55,7 +55,7 @@ class Database:
                 else:
                     valsstr += val
                 valsstr += ", "
-            valsstr = valsstr[:-2]
+            valsstr = "(" + valsstr[:-2] + ")"
 
         varstr = ""
 
