@@ -12,19 +12,20 @@ def signup(request_json):
     print("password is " + password)
     print("email is " + email)
 
-    db = data.opendb("main")
-    results = db.select("users", "*", "username=\"" + username + "\"")
+    # db = data.opendb("main")
+    # results = db.select("users", "*", "username=\"" + username + "\"")
 
-    if len(results) is not 0:
-        response["status"] = 1
-        return flask.jsonify(response)
+    # if len(results) is not 0:
+    #     response["status"] = 1
+    #     return flask.jsonify(response)
 
-    results = db.select("users", "*", "email=\"" + email + "\"")
+    # results = db.select("users", "*", "email=\"" + email + "\"")
 
-    if len(results) is not 0:
-        response["status"] = 2
-        return flask.jsonify(response)
+    # if len(results) is not 0:
+    #     response["status"] = 2
+    #     return flask.jsonify(response)
 
-    db.insert("users", [username, password, email], ["username", "password", "email"])
+    # db.insert("users", [username, password, email], ["username", "password", "email"])
 
-    return flask.jsonify(response)
+    # return flask.jsonify(response)
+    return "all good"
