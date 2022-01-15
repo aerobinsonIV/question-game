@@ -14,14 +14,3 @@ async function mom(text){
         return response.text();
     });
 }
-
-async function asyncFunction(){
-
-    text = document.getElementById("coolTextBox").value
-    outputText = document.getElementById("text");
-
-    mom(text).then((response) => {
-        console.log(response);
-        outputText.innerHTML = response;
-    });
-}
