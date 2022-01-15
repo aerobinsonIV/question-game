@@ -8,6 +8,10 @@ def signup(request_json):
     password = request_json['password']
     email = request_json['email']
 
+    print("useranem is " + username)
+    print("password is " + password)
+    print("email is " + email)
+
     db = data.opendb("main")
     results = db.select("users", "*", "username=\"" + username + "\"")
 
