@@ -22,3 +22,5 @@ def signup(request_json):
         return flask.jsonify(response)
 
     db.insert("users", [username, password, email], ["username", "password", "email"])
+
+    return flask.jsonify(response)
