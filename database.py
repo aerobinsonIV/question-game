@@ -65,7 +65,11 @@ class Database:
                     varstr += ", "
                 varstr = "(" + varstr[:-2] + ")"
 
-        self.cursorObject.execute("INSERT INTO " + tablename + " " + varstr + " VALUES " + valsstr)
+        query = "INSERT INTO " + tablename + " " + varstr + " VALUES " + valsstr
+
+        print("sql query: " + query)
+
+        self.cursorObject.execute(query)
 
     def rawCommand(self, command):
         self.cursorObject.execute(command)

@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="added insert rawCommand and update">
       <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +35,14 @@
       <option name="presentableId" value="Default" />
       <updated>1642264349928</updated>
     </task>
+    <task id="LOCAL-00001" summary="added insert rawCommand and update">
+      <created>1642267471979</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642267471979</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -48,5 +55,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added insert rawCommand and update" />
+    <option name="LAST_COMMIT_MESSAGE" value="added insert rawCommand and update" />
   </component>
 </project>
