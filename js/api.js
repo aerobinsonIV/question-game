@@ -33,5 +33,20 @@ async function signup(username, email, password){
 	return fetch(url, opts).then((response) => {
 		return response.json();
 	});
+}
 
+async function login(email, password){
+	var opts = {
+		method: 'POST',
+		headers: {
+			"Content-Type":"application/json"
+		},
+		body:`{"email":"${email}","password":"${password}"}`
+	};
+
+	let url = 'api/login';
+
+	return fetch(url, opts).then((response) => {
+		return response.json();
+	});
 }
