@@ -11,12 +11,36 @@ app = flask.Flask(__name__)
 # Page routes:
 
 @app.route("/")
-def index():
+def index_page():
     return flask.render_template("index.html")
 
 @app.route("/api-test")
 def api_test():
     return flask.render_template("api-test.html")
+
+@app.route("/signup")
+def signup_page():
+    return flask.render_template("signup.html")
+
+@app.route("/login")
+def login_page():
+    return flask.render_template("login.html")
+
+@app.route("/matchmaking")
+def matchmaking_page():
+    return flask.render_template("matchmaking.html")
+
+@app.route("/chat")
+def chat_page():
+    return flask.render_template("chat.html")
+
+@app.route("/questions")
+def questions_page():
+    return flask.render_template("questions.html")
+
+@app.route("/results")
+def results_page():
+    return flask.render_template("results.html")
 
 # API routes:
 
@@ -28,6 +52,10 @@ def api_mom():
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
 @app.route('/js/<path:path>')
-def send_js(path):
+def js(path):
     return flask.send_from_directory('js', path)
+
+@app.route('/css/<path:path>')
+def css(path):
+    return flask.send_from_directory('css', path)
 
