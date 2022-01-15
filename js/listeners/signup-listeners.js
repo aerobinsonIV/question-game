@@ -9,8 +9,5 @@ loginButton.addEventListener('click', (event) => {
     password = document.getElementById("password-input").value
 
     // Call API function  
-    signup(username, email, password).then((response) => {
-        console.log(response);
-        outputText.innerHTML = response.text;
-    });
+    signup(username, email, password);
 })
