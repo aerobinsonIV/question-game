@@ -14,6 +14,3 @@ def index():
 def send_js(path):
     return send_from_directory('js', path)
 
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host="0.0.0.0")
