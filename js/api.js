@@ -1,3 +1,5 @@
-export async function query(queryString){
-
+async function asyncFunction(inputString){
+    alert(inputString);
+    outputText = document.getElementById("text");
+    outputText.innerHTML = "hello";
 }

@@ -3,13 +3,16 @@
 
 <head>
     <title>Question game</title>
+    <script src="../js/api.js"></script>
 </head>
 
 <body>
     <h1>api test</h1>
     <h2>send text and we will append "you're mom"</h2>
     <input type="text">
-    <button onclick="alert('epic')">do the thing</button> 
+    <!-- Having onclick go to an async function doesn't work, but having it go to a normal function that calls async is fine apparently -->
+    <button onclick="asyncFunction('epic')">do the thing</button>
+    <h3 id="text">before click</h3>
 </body>
 
 </html>
