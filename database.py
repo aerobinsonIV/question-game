@@ -50,7 +50,10 @@ class Database:
             valsstr = vals
         else:
             for val in vals:
-                valsstr += val
+                if type(val) is str:
+                    valsstr += "\"" + val + "\""
+                else:
+                    valsstr += val
                 valsstr += ", "
             valsstr = valsstr[:-2]
 
