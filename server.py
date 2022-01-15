@@ -17,7 +17,7 @@ def api_test():
 # curl -d '{"text":"hello"}' -H "Content-Type: application/json" -X POST localhost/api/mom
 @app.route("/api/mom", methods=['POST'])
 def api_mom():
-    return mom(flask.request)
+    return mom(flask.request.get_json())
 
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
