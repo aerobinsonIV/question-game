@@ -1,7 +1,5 @@
 import flask
-import database as data
-
-
+import database
 def signup(request_json):
 
     response = {"status": 0}
@@ -11,7 +9,7 @@ def signup(request_json):
 
     print(f"Added user {username}")
 
-    db = data.opendb("main")
+    db = database.opendb("main")
     results = db.select("users", "*", "username=\"" + username + "\"")
 
     if len(results) is not 0:
