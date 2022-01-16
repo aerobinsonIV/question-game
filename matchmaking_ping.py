@@ -28,7 +28,7 @@ def matchmaking_ping(uid):
     print("Logged_in_users is " + str(logged_in_users))
 
     # Store the pair of users we need to notify
-    if len(logged_in_users) >= 2 and len(next_game_users == 0):
+    if len(logged_in_users) >= 2 and len(next_game_users) == 0:
         next_game_users[0] = logged_in_users[0]
         next_game_users[1] = logged_in_users[1]
 
