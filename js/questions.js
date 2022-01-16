@@ -122,7 +122,7 @@ function getResponses(){
         }
     }
 
-    let answers = [];
+    let answersArr = [];
 
     for (let i = 0; i < myResponses.length; i++) {
         let mine = findQuestion(myResponses, i);
@@ -131,11 +131,11 @@ function getResponses(){
         resp.my_answer = mine.answerID;
         resp.their_answer = theirs.answerID;
         resp.question_id = mine.questionID;
-        answers.push(resp);
+        answersArr.push(resp);
     }
 
 
-    console.log(answers);
+    console.log(answersArr);
 }
 
 function findQuestion(arr, id) {
