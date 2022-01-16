@@ -4,6 +4,7 @@ import flask
 from mom import mom
 from signup import signup
 from login import login
+import util
 
 app = flask.Flask(__name__)
 
@@ -30,7 +31,7 @@ def login_page():
 
 @app.route("/matchmaking")
 def matchmaking_page():
-    return "Login cookie " + flask.request.cookies.get("login_cookie")
+    return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
 
 @app.route("/chat")
 def chat_page():
