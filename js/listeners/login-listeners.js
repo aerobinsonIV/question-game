@@ -1,4 +1,4 @@
-// TODO: import * as api from "../api.js"
+import * as api from "../api.js"
 
 let loginButton = document.getElementById("login-button");
 loginButton.addEventListener('click', (event) => {
