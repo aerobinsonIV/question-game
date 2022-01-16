@@ -1,10 +1,10 @@
 import flask
-import matchmaking_ping
 
 # API path scripts:
 from mom import mom
 from signup import signup
 from login import login
+from matchmaking_ping import matchmaking_ping
 import util
 
 app = flask.Flask(__name__)
