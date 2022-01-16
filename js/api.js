@@ -103,3 +103,15 @@ async function postAnswers(asnwersJson){
 		return response.json();
 	});
 }
+
+async function otherPlayerFinishedPing(){
+	var opts = {
+		method: 'GET',
+	};
+
+	let url = 'api/other-player-finished-ping';
+
+	return fetch(url, opts).then((response) => {
+		return response.json();
+	});
+}
