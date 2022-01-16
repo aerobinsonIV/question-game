@@ -11,7 +11,14 @@
 
 <body>
     <h1>Questions</h1>
-    <div id="TEST"></div>
+    <div id="mine" style="float: left; overflow:auto; margin-right:70px">
+        <h2>Your answers</h2>
+    </div>
+    <div id="theirs" style="overflow:auto;">
+        <h2>Your partner's (guess)</h2>
+    </div>
+    <br>
+    <button onclick="getResponses()">Submit</button>
 </body>
 
   <script>
@@ -21,14 +28,16 @@
     questions[1].question = "What's your favorite color?";
     questions[0].choices= ['True','False'];
     questions[1].choices =['A','B','C','lol nerd'];
+    questions[0].question_id = 5; //etc
     for (let i = 0; i < questions.length; i++) {
         let C = document.createElement("div");
-        document.getElementById("TEST").appendChild(C);
+        document.getElementById("mine").appendChild(C);
         //C.style = 'transform: scale(0.65); position: relative; top: -100px;';
-        C.appendChild(document.createElement("br"));
+        //C.appendChild(document.createElement("br"));
         let q = document.createElement("h3");
         C.appendChild(q);
         q.textContent = questions[i].question;
+        q.question_id = questions[i].question_id;
         for (let j = 0; j < questions[i].choices.length; j++){            
             a = document.createElement("div");
             a.style ="padding: 10px";
@@ -42,11 +51,79 @@
             choice.type='radio';
             choice.name=i.toString();
             choice.id=i.toString()+"+"+j.toString();
+            choice.className = 'choice';
+            choice.question_id=questions[i].question_id;
+            choice.index = j;
+            choice.mine = true;
             style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;';
             C.appendChild(document.createElement("br"));
         }        
         document.createElement("hr");
     }
+
+
+    let questions2 =[{},{}];
+    questions2[0].question = "Are you cool as heck?";
+    questions2[1].question = "What's your favorite color?";
+    questions2[0].choices= ['True','False'];
+    questions2[1].choices =['A','B','C','lol nerd'];
+    questions2[0].question_id = 5; //etc
+    for (let i = 0; i < questions2.length; i++) {
+        let C = document.createElement("div");
+        document.getElementById("theirs").appendChild(C);
+        //C.style = 'transform: scale(0.65); position: relative; top: -100px;';
+        //C.appendChild(document.createElement("br"));
+        let q = document.createElement("h3");
+        C.appendChild(q);
+        q.textContent = questions2[i].question;
+        q.question_id = questions2[i].question_id;
+        for (let j = 0; j < questions2[i].choices.length; j++){            
+            a = document.createElement("div");
+            a.style ="padding: 10px";
+            lab = document.createElement("label");
+            lab.for =i.toString()+j.toString()+"t";
+            lab.style='padding:5px;'
+            lab.innerText=questions2[i].choices[j];
+            choice = document.createElement("input");
+            C.appendChild(choice);
+            C.appendChild(lab);
+            choice.type='radio';
+            choice.name=i.toString()+"t";
+            choice.id=i.toString()+"+"+j.toString()+"t";
+            choice.className = 'choice';
+            choice.question_id=questions2[i].question_id;
+            choice.index = j;
+            choice.mine = false;
+            style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;';
+            C.appendChild(document.createElement("br"));
+        }        
+        document.createElement("hr");
+    }
+
+    function getResponses(){
+        let answers = document.getElementsByClassName('choice');
+        let myResponses = [];
+        let myGuesses = [];
+        for (let i = 0; i < answers.length; i++){
+            if (answers[i].checked){
+                console.log("SNARF");
+                let res = {};
+                res.my_answer = answers[i].index;
+                res.their_answer = 0;
+                res.question_id = answers[i].question_id;
+                if (answers[i].mine){
+                    myResponses.push(res)
+                }
+                else {
+                    myGuesses.push(res)
+                }
+            }
+        }
+        console.log(myResponses);
+        console.log(myGuesses);
+    }
+
+    
     
   </script>
 </html>
