@@ -1,10 +1,10 @@
 function sendMatchmakingPingsUntilMatchFound(){
-    console.log("In matchmaking.js");
+    
     matchmakingPing().then((response) => {
         console.log(response);
 
         if(response.ready === 1){
-            console.log("Match found with uid " + response.partner)
+            console.log("Match found with " + response.partner)
         }else{
         //Rerun this function and ping again asking for a match
         setTimeout(() => {

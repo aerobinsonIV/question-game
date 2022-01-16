@@ -1,4 +1,3 @@
-from asyncore import read
 import flask
 import util
 
@@ -16,7 +15,7 @@ def already_in_array(new_uid):
 
 def matchmaking_ping(uid):
 
-    print(uid + " is looking for a match")
+    print("UID " + uid + " is looking for a match")
 
     ready = 0
     partner = ""
@@ -24,8 +23,6 @@ def matchmaking_ping(uid):
     # If this user isn't already in the array of logged in users, add them
     if (not uid in logged_in_users) and (not uid in next_game_users):
         logged_in_users.append(uid)
-    
-    print("Logged_in_users is " + str(logged_in_users))
 
     # Store the pair of users we need to notify
     if len(logged_in_users) >= 2 and len(next_game_users) == 0:
@@ -34,8 +31,7 @@ def matchmaking_ping(uid):
 
         del logged_in_users[0:2]
 
-        print("Next game pairing is " + str(next_game_users))
-        print("Logged_in_users is " + str(logged_in_users))
+        print("Pairing UIDs " + str(next_game_users))
 
     if len(next_game_users) != 0:
         for i, matched_uid in enumerate(next_game_users):
