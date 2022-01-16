@@ -27,7 +27,7 @@ def signup_page():
 
 @app.route("/login")
 def login_page():
-    return flask.render_template("login.html")
+    return flask.render_template("login.html") #TODO IF YOU ARE ALREADY LOGGED IN, REDIRECT TO MATCHMAKING
 
 @app.route("/matchmaking")
 def matchmaking_page():
