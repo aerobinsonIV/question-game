@@ -1,7 +1,7 @@
 let submitButton = document.getElementById("submit-button");
 
 function sendOtherPlayerFinishedPings() {
-    questionsPing().then((response) => {
+    otherPlayerFinishedPing().then((response) => {
 
         if(response.finished === 1){
             console.log("All questions answered!")
