@@ -31,7 +31,11 @@ function renderQuestions(data) {
     for (let i = 0; i < data.questions.length; i++) {
         let thisQuestion = {};
         thisQuestion.question = data.questions[i].question;
-        thisQuestion.choices = data.questions[i].answers;
+        let choices = [];
+        for (let j = 0; j < data.questions[i].answers.length; j++) {
+            choices.push(data.questions[i].answers[j].value)
+        }
+        thisQuestion.choices = choices;
         questions.push(thisQuestion);
     }
 
