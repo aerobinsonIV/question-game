@@ -4,6 +4,27 @@ getQuestions().then((response) => {
     renderQuestions(response);
 })
 
+/*
+setTimeout(() => {
+    sendWaitingPingsUntilQuestionsAnswered();
+}, 1000);
+
+function sendWaitingPingsUntilQuestionsAnswered() {
+    questionsPing().then((response) => {
+
+        if(response.ready === 1){
+            console.log("All questions answered!")
+            document.cookie = "game_id=" + response.game_id + "; path=/";
+            window.location.href = "/results";
+        }else{
+        //Rerun this function and ping again asking for a match
+        setTimeout(() => {
+            sendWaitingPingsUntilQuestionsAnswered();
+        }, 1000);
+        }
+    })
+}
+*/
 function renderQuestions(data) {
     let questions =[];
 
