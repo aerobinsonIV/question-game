@@ -43,7 +43,7 @@ function renderQuestions(data) {
 
     for (let i = 0; i < questions.length; i++) {
         let C = document.createElement("div");
-        document.getElementById("TEST").appendChild(C);
+        document.getElementById("mine").appendChild(C);
         //C.style = 'transform: scale(0.65); position: relative; top: -100px;';
         C.appendChild(document.createElement("br"));
         let q = document.createElement("h3");
