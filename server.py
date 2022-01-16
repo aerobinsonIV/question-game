@@ -32,6 +32,7 @@ def login_page():
 @app.route("/matchmaking")
 def matchmaking_page():
     cookie = flask.request.cookies.get("login_cookie")
+    print("GOT DA COOKIE")
     if util.check_cookie(cookie):
         return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
     else:
