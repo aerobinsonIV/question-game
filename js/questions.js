@@ -121,6 +121,28 @@ function getResponses(){
 
         }
     }
-    console.log(myResponses);
-    console.log(myGuesses);
+
+    let answers = [];
+
+    for (let i = 0; i < myResponses.length; i++) {
+        let mine = findQuestion(myResponses, i);
+        let theirs = findQuestion(myGuesses, i);
+        let resp = {};
+        resp.my_answer = mine.answerID;
+        resp.their_answer = theirs.answerID;
+        resp.question_id = mine.questionID;
+        answers.push(resp);
+    }
+
+
+    console.log(answers);
+}
+
+function findQuestion(arr, id) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].questionID == id) {
+            return arr[i];
+        }
+    }
+    return null;
 }

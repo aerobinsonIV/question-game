@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="fixed minor error">
+    <list default="true" id="cbd82ae0-9e65-494b-b64c-65dc4f3f366c" name="Changes" comment="changes how responses are handled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/questions.js" afterDir="false" />
     </list>
@@ -210,7 +210,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642346416646</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="changes how responses are handled">
+      <created>1642347000393</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1642347000393</updated>
+    </task>
+    <task id="LOCAL-00022" summary="changes how responses are handled">
+      <created>1642347298857</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1642347298857</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +253,7 @@
     <MESSAGE value="added some ping code, commented out for now" />
     <MESSAGE value="added second questions" />
     <MESSAGE value="fixed minor error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed minor error" />
+    <MESSAGE value="changes how responses are handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes how responses are handled" />
   </component>
 </project>
