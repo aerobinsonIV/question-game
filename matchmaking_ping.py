@@ -6,6 +6,7 @@ logged_in_users = []
 def matchmaking_ping(uid):
 
     username = util.get_username(uid)
+    print(username + " is looking for a match")
 
     ready = 0
     other_username = 0
