@@ -27,5 +27,4 @@ def get_questions(game_id, num):
 
         ret["questions"].append(add)
 
-    return ret
-    #return flask.jsonify(ret)
+    return flask.jsonify(ret)
