@@ -63,3 +63,15 @@ async function matchmakingPing(){
 	});
 }
 
+async function getQuestions(){
+	var opts = {
+		method: 'GET',
+	};
+
+	let url = 'api/questions';
+
+	return fetch(url, opts).then((response) => {
+		return response.json();
+	});
+}
+
