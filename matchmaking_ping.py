@@ -7,6 +7,8 @@ next_game_users = []
 
 users_notified = [0, 0]
 
+next_gameid = -1
+
 def already_in_array(new_uid):
     for uid in logged_in_users:
         if uid == new_uid:
@@ -19,6 +21,7 @@ def matchmaking_ping(uid):
 
     ready = 0
     partner = ""
+    gameid = -1
 
     # If this user isn't already in the array of logged in users, add them
     if (not uid in logged_in_users) and (not uid in next_game_users):
@@ -31,6 +34,8 @@ def matchmaking_ping(uid):
 
         del logged_in_users[0:2]
 
+        next_gameid = util.get_next_gameid()
+
         print("Pairing UIDs " + str(next_game_users))
 
     if len(next_game_users) != 0:
@@ -40,6 +45,7 @@ def matchmaking_ping(uid):
                 ready = 1
                 partner = util.get_username(next_game_users[1 - i]) #Hacky way to get the other element since we know there are only 2
                 users_notified[i] = 0
+                gameid = next_gameid
 
     # If both players have been notified, reset matchmaking stuff
     # TODO: maybe put this after response has been sent?
@@ -50,7 +56,8 @@ def matchmaking_ping(uid):
 
     response = {
         "ready": ready,
-        "partner": partner
+        "partner": partner,
+        "gameid": gameid
     }
 
     return flask.jsonify(response)

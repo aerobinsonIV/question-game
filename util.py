@@ -1,4 +1,5 @@
 import database
+import random
 
 def get_username(uid):
     if uid:
@@ -14,3 +15,8 @@ def check_cookie(uid):
     results = db.select("users", "username", "id=\"" + uid + "\"")
     db.close()
     return len(results) > 0
+
+def get_next_gameid():
+    gameid = random()
+    print("Generated game ID " + gameid)
+    return gameid
