@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Question game</title>
-    <script src="../js/api.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-
+{% extends "layout.html" %}
+{% block content %}
     <label>Email</label>
     <input type="text" id="email-input">
 
@@ -20,6 +11,4 @@
     <div class="pretty-button" id="login-button">Log in! :D</div>
 
     <script src="../js/listeners/login-listeners.js"></script>
-</body>
-
-</html>
+{% endblock %}
