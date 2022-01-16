@@ -8,7 +8,7 @@ loginButton.addEventListener('click', (event) => {
     password = document.getElementById("password-input").value
 
     // Call API function  
-    login(email, password).then((response) => {
+    api.login(email, password).then((response) => {
         document.cookie = "login_cookie=" + response.cookie + "; path=/";
         alert("Welcome, " + response.username + "!");
     });
