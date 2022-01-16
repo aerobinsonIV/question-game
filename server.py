@@ -76,6 +76,10 @@ def api_matchmaking_ping():
 @app.route("/api/questions")
 def api_get_questions():
     return get_questions(flask.request.cookies.get("game_id"), 5)
+ 
+#@app.route("/api/questions-ping")
+#def api_questions_ping():
+#    return flask.jsonify({"ready": 0})
 
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask

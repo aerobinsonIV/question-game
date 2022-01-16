@@ -75,3 +75,14 @@ async function getQuestions(){
 	});
 }
 
+async function questionsPing(){
+	var opts = {
+		method: 'GET',
+	};
+
+	let url = 'api/questions-ping';
+
+	return fetch(url, opts).then((response) => {
+		return response.json();
+	});
+}
