@@ -78,7 +78,7 @@ def api_matchmaking_ping():
 def api_get_questions():
     return get_questions(flask.request.cookies.get("game_id"), 5)
 
-@app.route("/api/answers")
+@app.route("/api/answers", methods=['POST'])
 def api_accept_answers():
     return accept_answers(flask.request.cookies.get("login_cookie"), flask.request.cookies.get("game_id"), flask.request.get_json())
 
