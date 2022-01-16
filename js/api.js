@@ -53,7 +53,7 @@ async function login(email, password){
 
 async function matchmakingPing(){
 	var opts = {
-		method: 'POST',
+		method: 'GET',
 	};
 
 	let url = 'api/matchmaking';

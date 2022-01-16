@@ -78,7 +78,7 @@ def api_signup():
 def api_login():
     return login(flask.request.get_json())
 
-@app.route("/api/matchmaking-ping", methods=['POST'])
+@app.route("/api/matchmaking-ping")
 def api_matchmaking_ping():
     return matchmaking_ping(flask.request.cookies.get("login_cookie"))
 
