@@ -134,6 +134,8 @@ function getResponses(){
         answersArr.push(resp);
     }
 
+    let toSend = {};
+    toSend.answers = answersArr;
 
     console.log(answersArr);
 }
