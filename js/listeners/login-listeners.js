@@ -1,4 +1,4 @@
-import * as api from "../api.js"
+// TODO: import * as api from "../api.js"
 
 let loginButton = document.getElementById("login-button");
 loginButton.addEventListener('click', (event) => {
@@ -8,7 +8,7 @@ loginButton.addEventListener('click', (event) => {
     password = document.getElementById("password-input").value
 
     // Call API function  
-    api.login(email, password).then((response) => {
+    login(email, password).then((response) => {
         document.cookie = "login_cookie=" + response.cookie + "; path=/";
         alert("Welcome, " + response.username + "!");
     });
