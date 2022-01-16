@@ -50,3 +50,16 @@ async function login(email, password){
 		return response.json();
 	});
 }
+
+async function matchmakingPing(){
+	var opts = {
+		method: 'GET',
+	};
+
+	let url = 'api/matchmaking-ping';
+
+	return fetch(url, opts).then((response) => {
+		return response.json();
+	});
+}
+
