@@ -35,7 +35,7 @@ def matchmaking_page():
     if type(cookie) is int and cookie > 0:
         return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
     else:
-        return flask.render_template("index.html")
+        return flask.render_template("redirect.html")
 
 @app.route("/chat")
 def chat_page():
@@ -43,7 +43,7 @@ def chat_page():
     if type(cookie) is int and cookie > 0:
         return flask.render_template("chat.html")
     else:
-        return flask.render_template("index.html")
+        return flask.render_template("redirect.html")
 
 @app.route("/questions")
 def questions_page():
@@ -51,7 +51,7 @@ def questions_page():
     if type(cookie) is int and cookie > 0:
         return flask.render_template("questions.html")
     else:
-        return flask.render_template("index.html")
+        return flask.render_template("redirect.html")
 
 @app.route("/results")
 def results_page():
@@ -59,7 +59,7 @@ def results_page():
     if type(cookie) is int and cookie > 0:
         return flask.render_template("results.html")
     else:
-        return flask.render_template("index.html")
+        return flask.render_template("redirect.html")
 
 # API routes:
 
