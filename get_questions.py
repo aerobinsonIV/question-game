@@ -1,11 +1,31 @@
 import json
 from urllib import response
-
+import questions
 
 import flask
 
-def get_questions(game_id):
 
-    response = {"questions": [{"question": "Cats or dogs?", "answers": [{"value": "cats"}, {"value": "dogs"}]}, {"question": "Do you drive stick or automatic? ", "answers": [{"value": "manual"}, {"value": "automatic"}, {"value": "don't drive"}]}, {"question": "Which OS do you use?", "answers": [{"value": "Windows"}, {"value": "Mac"}, {"value": "Linux/Other"}]}, {"question": "Do you think you are an introvert or extrovert?", "answers": [{"value": "Introvert"}, {"value": "Extrovert"}]}, {"question": "Do you own an electric skateboard or onewheel?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "What\u00e2\u20ac\u2122s your favorite chat app?", "answers": [{"value": "Discord"}, {"value": "Slack"}, {"value": "Microsoft Teams"}, {"value": "Telegram"}, {"value": "Skype"}, {"value": "Snapchat"}, {"value": "Whatsapp"}, {"value": "iMessage"}]}, {"question": "Are you a weeb?", "answers": [{"value": "yes"}, {"value": "no"}, {"value": "what is that?"}]}, {"question": "Do you work and learn steadily or in short bursts?", "answers": [{"value": "steadily"}, {"value": "short bursts"}]}, {"question": "Are you emotionally expressive, or calm and neutral?", "answers": [{"value": "expressive"}, {"value": "calm"}, {"value": "neutral"}]}, {"question": "Do you trust people easily?", "answers": [{"value": "Yes"}, {"value": "Sometimes"}, {"value": "No"}]}, {"question": "Does getting rid of stuff make you happy?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "What\u00e2\u20ac\u2122s more important: Freedom or safety?", "answers": [{"value": "Freedom"}, {"value": "Safety"}]}, {"question": "Would you prefer to spend 60% of your time alone or 60% of your time with other people?", "answers": [{"value": "Alone"}, {"value": "With others"}]}, {"question": "Do you enjoy making presentations and speaking to large groups of people?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "Do you prefer to have a detailed and strict schedule, or do you like to have lots of time to pursue your own projects?", "answers": [{"value": "Strict Scedule"}, {"value": "More Free Time"}]}, {"question": "Do you enjoy making decisions?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "Do you prefer predictability and detailed planning or spontaneity?", "answers": [{"value": "Predictability"}, {"value": "Spontaneity"}]}, {"question": "Trampoline?", "answers": [{"value": "Yes"}]}, {"question": "Which type of phone do you have?", "answers": [{"value": "iPhone"}, {"value": "Android"}]}, {"question": "Pineapple on pizza?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "Do you prefer in person or zoom classes?", "answers": [{"value": "In person"}, {"value": "Zoom"}]}, {"question": "Headphones or earbuds?", "answers": [{"value": "Headphones"}, {"value": "Earbuds"}, {"value": "Both"}]}, {"question": "Apples or bananas?", "answers": [{"value": "Apples"}, {"value": "Bananas"}, {"value": "None"}]}, {"question": "Desktop or laptop?", "answers": [{"value": "Desktop"}, {"value": "Laptop"}, {"value": "Both"}]}, {"question": "Do you use Reddit?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "Favorite Browser?", "answers": [{"value": "Chrome"}, {"value": "Firefox"}, {"value": "Edge"}, {"value": "Safari"}]}, {"question": "Do you listen to kpop?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "Favorite game console?", "answers": [{"value": "Playstation"}, {"value": "Xbox"}, {"value": "Switch"}, {"value": "PC"}]}, {"question": "Favorite video streaming app?", "answers": [{"value": "YouTube"}, {"value": "Netflix"}, {"value": "Hulu"}, {"value": "Disney+"}, {"value": "Apple TV+"}, {"value": "Twitch"}, {"value": "HBO Max"}]}, {"question": "When you go to a party, are you in the center of the action, or alone on the sides?", "answers": [{"value": "Center of the Action"}, {"value": "Alone at the side"}, {"value": "Not going in the first place"}]}, {"question": "Do you look for excuses to get out of seeing people?", "answers": [{"value": "Yes"}, {"value": "Kind of"}, {"value": "No"}]}, {"question": "Do you try to befriend as many people as possible or try to make the closest connections with a small number of people?", "answers": [{"value": "As Many As Possible!"}, {"value": "Keep your friendns tight!"}]}, {"question": "Do you have kids or think you\u00e2\u20ac\u2122ll have kids?", "answers": [{"value": "Yes"}, {"value": "No"}]}, {"question": "Did you get a graduate degree or plan to get a graduate degree?", "answers": [{"value": "Yes"}, {"value": "No"}]}]}
+def get_questions(game_id, num):
+    allQuestions = questions.readQuestionsFile("questions.json")
+    ret = {"questions": []}
+    ids = []
 
-    return flask.jsonify(response)
+    while len(ids) < num:
+        game_id = int(game_id * 8754)
+        game_id <<= 2
+        game_id = int(game_id / 52)
+        question_id = game_id % len(allQuestions)
+        if question_id in ids:
+            continue
+        ids.append(question_id)
+
+    for myid, i in zip(ids, range(len(ids))):
+        add = {"question": allQuestions[myid].question, "answers": [], "question_id": i}
+
+        for answer in allQuestions[myid].answers:
+            add["answers"].append({"value": answer})
+
+        ret["questions"].append(add)
+
+    return ret
+    #return flask.jsonify(ret)
