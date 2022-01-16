@@ -107,17 +107,18 @@ function getResponses(){
     let myGuesses = [];
     for (let i = 0; i < answers.length; i++){
         if (answers[i].checked){
-            console.log("SNARF");
-            let res = {};
-            res.my_answer = answers[i].index;
-            res.their_answer = 0;
-            res.question_id = answers[i].question_id;
-            if (answers[i].mine){
-                myResponses.push(res)
+            let id = answers[i].id;
+            let questionID = id[0];
+            let answerID = id[2];
+            resp = {};
+            resp.questionID = questionID;
+            resp.answerID = answerID;
+            if (id.length > 3) {
+                myGuesses.push(resp);
+            } else {
+                myResponses.push(resp)
             }
-            else {
-                myGuesses.push(res)
-            }
+
         }
     }
     console.log(myResponses);
