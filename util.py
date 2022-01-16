@@ -17,6 +17,6 @@ def check_cookie(uid):
     return len(results) > 0
 
 def get_next_gameid():
-    gameid = random(0, 999999999)
+    gameid = random.random(0, 999999999)
     print("Generated game ID " + gameid)
     return gameid
