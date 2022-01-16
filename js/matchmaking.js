@@ -3,7 +3,7 @@ function sendMatchmakingPingsUntilMatchFound(){
     matchmakingPing().then((response) => {
         console.log(response);
 
-        if(response.ready === "1"){
+        if(response.ready === 1){
             console.log("Match found with uid " + response.other-player-uid)
         }else{
         //Rerun this function and ping again asking for a match
