@@ -75,3 +75,32 @@ async function getQuestions(){
 	});
 }
 
+async function postAnswers(asnwersJson){
+	var opts = {
+		method: 'POST',
+		headers: {
+			"Content-Type":"application/json"
+		},
+		body:`{
+			"answers": [
+				{
+					"my_answer":1, 
+					"their_answer":2, 
+					"question_id":0
+				},
+				{
+					"my_answer":3, 
+					"their_answer":1, 
+					"question_id":1
+				}
+			]
+		}`
+	};
+
+	let url = 'api/answers';
+
+	return fetch(url, opts).then((response) => {
+		return response.json();
+	});
+}
+

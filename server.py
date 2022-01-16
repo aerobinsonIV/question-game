@@ -1,4 +1,5 @@
 import flask
+from accept_answers import accept_answers
 from get_questions import get_questions
 
 # API path scripts:
@@ -76,6 +77,10 @@ def api_matchmaking_ping():
 @app.route("/api/questions")
 def api_get_questions():
     return get_questions(flask.request.cookies.get("game_id"), 5)
+
+@app.route("/api/answers")
+def api_accept_answers():
+    return accept_answers(flask.request.cookies.get("login_cookie"), flask.request.cookies.get("game_id"), flask.request.get_json())
 
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
