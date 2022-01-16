@@ -75,12 +75,29 @@ async function getQuestions(){
 	});
 }
 
-async function questionsPing(){
+async function postAnswers(asnwersJson){
 	var opts = {
-		method: 'GET',
+		method: 'POST',
+		headers: {
+			"Content-Type":"application/json"
+		},
+		body:`{
+			"answers": [
+				{
+					"my_answer":1, 
+					"their_answer":2, 
+					"question_id":0
+				},
+				{
+					"my_answer":3, 
+					"their_answer":1, 
+					"question_id":1
+				}
+			]
+		}`
 	};
 
-	let url = 'api/questions-ping';
+	let url = 'api/answers';
 
 	return fetch(url, opts).then((response) => {
 		return response.json();
