@@ -103,4 +103,3 @@ async function postAnswers(asnwersJson){
 		return response.json();
 	});
 }
-
