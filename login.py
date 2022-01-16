@@ -1,5 +1,5 @@
 import flask
-import database as data
+import database as database
 
 
 def login(request_json):
@@ -12,7 +12,7 @@ def login(request_json):
     email = request_json["email"]
     password = request_json["password"]
 
-    db = data.opendb("main")
+    db = database.opendb("main")
 
     users = db.select("users", ["username", "id"], "email=\"" + email + "\" AND password=\"" + password + "\"")
 

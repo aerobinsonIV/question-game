@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <script src="../js/signup.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Question game</title>
-</head>
-
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <h1>Welcome to Iv and David's amazing game</h1>
-    <!-- <button onclick="alert('yooooooo you clicked the signup button!!!!!!')">Sign up</button>  -->
-    <button onclick="signup()">Sign up</button>
 
-    <div class="pretty-button">UwU</div>
-    <a href="localhost/login" class="pretty-button">OwO</a>
-</body>
+    <a href="/signup" class="pretty-button">UwU</a>
+    <a href="/login" class="pretty-button">OwO</a>
+{% endblock %}
 
-</html>
