@@ -34,11 +34,13 @@ def matchmaking_ping(uid):
 
         del logged_in_users[0:2]
 
-        next_gameid = util.get_next_gameid()
-
         print("Pairing UIDs " + str(next_game_users))
 
     if len(next_game_users) != 0:
+        
+        if next_gameid == -1:
+            next_gameid = util.get_next_gameid()
+            
         for i, matched_uid in enumerate(next_game_users):
             if uid == matched_uid:
                 # Notify this user that they have been matched
