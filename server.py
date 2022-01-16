@@ -4,6 +4,7 @@ import flask
 from mom import mom
 from signup import signup
 from login import login
+import util
 
 app = flask.Flask(__name__)
 
@@ -26,23 +27,40 @@ def signup_page():
 
 @app.route("/login")
 def login_page():
-    return flask.render_template("login.html")
+    return flask.render_template("login.html") #TODO IF YOU ARE ALREADY LOGGED IN, REDIRECT TO MATCHMAKING
 
 @app.route("/matchmaking")
 def matchmaking_page():
-    return flask.render_template("matchmaking.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    print("GOT DA COOKIE")
+    if util.check_cookie(cookie):
+        return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
+    else:
+        return flask.render_template("redirect.html")
 
 @app.route("/chat")
 def chat_page():
-    return flask.render_template("chat.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    if util.check_cookie(cookie):
+        return flask.render_template("chat.html")
+    else:
+        return flask.render_template("redirect.html")
 
 @app.route("/questions")
 def questions_page():
-    return flask.render_template("questions.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    if util.check_cookie(cookie):
+        return flask.render_template("questions.html")
+    else:
+        return flask.render_template("redirect.html")
 
 @app.route("/results")
 def results_page():
-    return flask.render_template("results.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    if util.check_cookie(cookie):
+        return flask.render_template("results.html")
+    else:
+        return flask.render_template("redirect.html")
 
 # API routes:
 

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Question game</title>
-    <script src="../js/api.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <label>Username</label>
     <input type="text" id="username-input">
-    
+
     <br>
 
     <label>Email</label>
@@ -24,6 +16,4 @@
     <div class="pretty-button" id="signup-button">Sign up! :D</div>
 
     <script src="../js/listeners/signup-listeners.js"></script>
-</body>
-
-</html>
+{% endblock %}
