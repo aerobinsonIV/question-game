@@ -1,5 +1,5 @@
 import flask
-from accept_answers import accept_answers
+import endgame
 from get_questions import get_questions
 
 # API path scripts:
@@ -80,7 +80,12 @@ def api_get_questions():
 
 @app.route("/api/answers", methods=['POST'])
 def api_accept_answers():
-    return accept_answers(flask.request.cookies.get("login_cookie"), flask.request.cookies.get("game_id"), flask.request.get_json())
+    return endgame.accept_answers(flask.request.cookies.get("login_cookie"), flask.request.cookies.get("game_id"), flask.request.get_json())
+
+@app.route("/api/other-player-finished-ping")
+def api_other_player_finished_ping():
+    return endgame.other_player_finished_ping(flask.request.cookies.get("login_cookie"), flask.request.cookies.get("game_id"))
+
 
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
