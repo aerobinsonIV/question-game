@@ -31,19 +31,35 @@ def login_page():
 
 @app.route("/matchmaking")
 def matchmaking_page():
-    return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
+    cookie = flask.request.cookies.get("login_cookie")
+    if type(cookie) is int and cookie > 0:
+        return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
+    else:
+        return flask.render_template("index.html")
 
 @app.route("/chat")
 def chat_page():
-    return flask.render_template("chat.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    if type(cookie) is int and cookie > 0:
+        return flask.render_template("chat.html")
+    else:
+        return flask.render_template("index.html")
 
 @app.route("/questions")
 def questions_page():
-    return flask.render_template("questions.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    if type(cookie) is int and cookie > 0:
+        return flask.render_template("questions.html")
+    else:
+        return flask.render_template("index.html")
 
 @app.route("/results")
 def results_page():
-    return flask.render_template("results.html")
+    cookie = flask.request.cookies.get("login_cookie")
+    if type(cookie) is int and cookie > 0:
+        return flask.render_template("results.html")
+    else:
+        return flask.render_template("index.html")
 
 # API routes:
 
