@@ -29,8 +29,8 @@ def matchmaking_ping(uid):
 
     # Store the pair of users we need to notify
     if len(logged_in_users) >= 2 and len(next_game_users) == 0:
-        next_game_users[0] = logged_in_users[0]
-        next_game_users[1] = logged_in_users[1]
+        next_game_users.append(logged_in_users[0])
+        next_game_users.append(logged_in_users[1])
 
         logged_in_users.remove[0]
         logged_in_users.remove[0]
