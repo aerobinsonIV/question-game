@@ -74,7 +74,7 @@ def api_matchmaking_ping():
     return matchmaking_ping(flask.request.cookies.get("login_cookie"))
 
 @app.route("/api/questions")
-def api_matchmaking_ping():
+def api_get_questions():
     return get_questions(flask.request.cookies.get("game_id"))
 
 # This part hosts the whole JS folder or something
