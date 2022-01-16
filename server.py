@@ -28,12 +28,13 @@ def signup_page():
 
 @app.route("/login")
 def login_page():
-    return flask.render_template("login.html")
+    return flask.render_template("login.html") #TODO IF YOU ARE ALREADY LOGGED IN, REDIRECT TO MATCHMAKING
 
 @app.route("/matchmaking")
 def matchmaking_page():
     cookie = flask.request.cookies.get("login_cookie")
-    if type(cookie) is int and cookie > 0:
+    print("GOT DA COOKIE")
+    if util.check_cookie(cookie):
         return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
     else:
         return flask.render_template("redirect.html")
@@ -41,7 +42,7 @@ def matchmaking_page():
 @app.route("/chat")
 def chat_page():
     cookie = flask.request.cookies.get("login_cookie")
-    if type(cookie) is int and cookie > 0:
+    if util.check_cookie(cookie):
         return flask.render_template("chat.html")
     else:
         return flask.render_template("redirect.html")
@@ -49,7 +50,7 @@ def chat_page():
 @app.route("/questions")
 def questions_page():
     cookie = flask.request.cookies.get("login_cookie")
-    if type(cookie) is int and cookie > 0:
+    if util.check_cookie(cookie):
         return flask.render_template("questions.html")
     else:
         return flask.render_template("redirect.html")
@@ -57,7 +58,7 @@ def questions_page():
 @app.route("/results")
 def results_page():
     cookie = flask.request.cookies.get("login_cookie")
-    if type(cookie) is int and cookie > 0:
+    if util.check_cookie(cookie):
         return flask.render_template("results.html")
     else:
         return flask.render_template("redirect.html")
