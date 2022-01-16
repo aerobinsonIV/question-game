@@ -32,7 +32,7 @@ def matchmaking_ping(uid):
         next_game_users.append(logged_in_users[0])
         next_game_users.append(logged_in_users[1])
 
-        del logged_in_users[0:1]
+        del logged_in_users[0:2]
 
         print("Next game pairing is " + str(next_game_users))
         print("Logged_in_users is " + str(logged_in_users))
