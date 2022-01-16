@@ -13,7 +13,7 @@ def get_questions(game_id, num):
     while len(ids) < num:
         game_id = int(game_id * 8754)
         game_id <<= 2
-        game_id = int(game_id / 52)
+        game_id = int(game_id % 5000)
         question_id = game_id % len(allQuestions)
         if question_id in ids:
             continue
