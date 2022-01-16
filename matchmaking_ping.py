@@ -22,7 +22,7 @@ def matchmaking_ping(uid):
     partner = ""
 
     # If this user isn't already in the array of logged in users, add them
-    if not uid in logged_in_users:
+    if (not uid in logged_in_users) and (not uid in next_game_users):
         logged_in_users.append(uid)
     
     print("Logged_in_users is " + str(logged_in_users))
