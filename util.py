@@ -1,5 +1,6 @@
 import database
 import random
+import math
 
 def get_username(uid):
     if uid:
@@ -17,6 +18,6 @@ def check_cookie(uid):
     return len(results) > 0
 
 def get_next_gameid():
-    gameid = random.random()
+    gameid = math.floor(random.random() * 10000000000000000)
     print("Generated game ID " + str(gameid))
     return gameid
