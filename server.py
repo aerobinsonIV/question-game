@@ -13,6 +13,13 @@ app = flask.Flask(__name__)
 
 # Page routes:
 
+def page_if_logged_in(render_template_line):
+    cookie = flask.request.cookies.get("login_cookie")
+    if util.check_cookie(cookie):
+        return render_template_line
+    else:
+        return flask.render_template("redirect.html")
+
 @app.route("/")
 def index_page():
     return flask.render_template("index.html")
@@ -31,36 +38,19 @@ def login_page():
 
 @app.route("/matchmaking")
 def matchmaking_page():
-    cookie = flask.request.cookies.get("login_cookie")
-    print("GOT DA COOKIE")
-    if util.check_cookie(cookie):
-        return flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie")))
-    else:
-        return flask.render_template("redirect.html")
+    return page_if_logged_in(flask.render_template("matchmaking.html", username=util.get_username(flask.request.cookies.get("login_cookie"))))
 
 @app.route("/chat")
 def chat_page():
-    cookie = flask.request.cookies.get("login_cookie")
-    if util.check_cookie(cookie):
-        return flask.render_template("chat.html")
-    else:
-        return flask.render_template("redirect.html")
+    return page_if_logged_in(flask.render_template("chat.html"))
 
 @app.route("/questions")
 def questions_page():
-    cookie = flask.request.cookies.get("login_cookie")
-    if util.check_cookie(cookie):
-        return flask.render_template("questions.html")
-    else:
-        return flask.render_template("redirect.html")
+   return page_if_logged_in(flask.render_template("questions.html"))
 
 @app.route("/results")
 def results_page():
-    cookie = flask.request.cookies.get("login_cookie")
-    if util.check_cookie(cookie):
-        return flask.render_template("results.html")
-    else:
-        return flask.render_template("redirect.html")
+    return page_if_logged_in(flask.render_template("results.html"))
 
 # API routes:
 
