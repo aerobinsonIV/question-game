@@ -4,11 +4,49 @@
 <head>
     <title>Question game</title>
     <script src="../js/api.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
 </head>
 
 <body>
-    Questions
+    <h1>Questions</h1>
+    <div id="TEST"></div>
 </body>
 
+  <script>
+    //SAMPLE OF WHAT FORMAT THE QUESTIONS SHOULD BE PROVIDED IN
+    let questions =[{},{}];
+    questions[0].question = "Are you cool as heck?";
+    questions[1].question = "What's your favorite color?";
+    questions[0].choices= ['True','False'];
+    questions[1].choices =['A','B','C','lol nerd'];
+    for (let i = 0; i < questions.length; i++) {
+        let C = document.createElement("div");
+        document.getElementById("TEST").appendChild(C);
+        //C.style = 'transform: scale(0.65); position: relative; top: -100px;';
+        C.appendChild(document.createElement("br"));
+        let q = document.createElement("h3");
+        C.appendChild(q);
+        q.textContent = questions[i].question;
+        for (let j = 0; j < questions[i].choices.length; j++){            
+            a = document.createElement("div");
+            a.style ="padding: 10px";
+            lab = document.createElement("label");
+            lab.for =i.toString()+j.toString();
+            lab.style='padding:5px;'
+            lab.innerText=questions[i].choices[j];
+            choice = document.createElement("input");
+            C.appendChild(choice);
+            C.appendChild(lab);
+            choice.type='radio';
+            choice.name=i.toString();
+            document.id=i.toString()+j.toString();
+            style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;';
+            C.appendChild(document.createElement("br"));
+        }        
+        document.createElement("hr");
+    }
+    
+  </script>
 </html>
