@@ -29,10 +29,6 @@ function handleQuestionSubmitResponse(response){
     }
 }
 
-setTimeout(() => {
-    sendOtherPlayerFinishedPings();
-}, 1000);
-
 submitButton.addEventListener('click', (event) => {
     
     postAnswers("poggers").then((response) => {
