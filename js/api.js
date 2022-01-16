@@ -56,7 +56,7 @@ async function matchmakingPing(){
 		method: 'GET',
 	};
 
-	let url = 'api/matchmaking';
+	let url = 'api/matchmaking-ping';
 
 	return fetch(url, opts).then((response) => {
 		return response.json();
