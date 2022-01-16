@@ -18,8 +18,10 @@ def accept_answers(uid, game_id, request_json):
     
     if(uids_done[0] == -1):
         uids_done[0] == uid
+        print(f"here1, set uids_done to {str(uids_done)}")
     else:
         uids_done[1] == uid
+        print(f"here2, set uids_done to {str(uids_done)}")
 
     print(f"set uids_done to {str(uids_done)}")
 
