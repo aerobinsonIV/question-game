@@ -38,7 +38,7 @@ def matchmaking_ping(uid):
 
     if len(next_game_users) != 0:
         
-        if next_gameid == -1:
+        if super.next_gameid == -1:
             next_gameid = util.get_next_gameid()
             
         for i, matched_uid in enumerate(next_game_users):
