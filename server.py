@@ -1,4 +1,5 @@
 import flask
+import matchmaking_ping
 
 # API path scripts:
 from mom import mom
@@ -75,6 +76,10 @@ def api_signup():
 @app.route("/api/login", methods=['POST'])
 def api_login():
     return login(flask.request.get_json())
+
+@app.route("/api/matchmaking-ping", methods=['POST'])
+def api_matchmaking_ping():
+    return matchmaking_ping(flask.request.cookies.get("login_cookie"))
 
 # This part hosts the whole JS folder or something
 # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
