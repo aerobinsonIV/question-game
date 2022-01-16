@@ -60,6 +60,7 @@ function renderQuestions(data) {
             C.appendChild(choice);
             C.appendChild(lab);
             choice.type='radio';
+            choice.className = 'choice';
             choice.name=i.toString();
             choice.id=i.toString()+"+"+j.toString();
             style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;';
